@@ -22,7 +22,7 @@ export const Header = () => {
         <> 
             <nav className={`flexBetween mx-auto max-w-full font-[Azonix] z-50
             ${!modeCtx?.mode ? "bg-white shadow-headerBlack" : "bg-black shadow-headerWhite"} 
-            w-screen padding-container fixed py-6 " id="header`}>
+            w-screen padding-container fixed py-6`}>
                 <Link href={"/"}>
                     <h1 className={`text-3xl ${!modeCtx?.mode ? "text-black" : "text-primaryBlue"}`}>Gustavo.Dev</h1>
                 </Link>
@@ -74,23 +74,23 @@ export const Header = () => {
 
                         <ul className="w-full h-full flexCenter flex-col gap-20">
                         {langCtx?.language && NavLinksPt.map((link)=>(
-                            <Link key={link.key} href={link.href} 
+                            <a key={link.key} href={link.href} 
                             className={`text-md flex ${!modeCtx?.mode ? "text-primaryGray" : "text-primaryBlue"} flexCenter cursor-pointer  
                             transition-all ${!modeCtx?.mode ? "hover:text-primaryBlue " : "hover:text-white"}`} 
                             onClick={()=> setActive(false)}>
                                 <li>
                                 {link.label}
                                 </li>
-                            </Link>
+                            </a>
                         ))}
                         {!langCtx?.language && NavLinksEn.map((link)=>(
-                            <Link key={link.key} href={link.href} 
+                            <a key={link.key} href={link.href} 
                             className={`text-md flex ${!modeCtx?.mode ? "text-primaryGray" : "text-primaryBlue"} flexCenter cursor-pointer  
                             transition-all ${!modeCtx?.mode ? "hover:text-primaryBlue " : "hover:text-white"}`} onClick={()=> setActive(false)}>
                                 <li>
                                 {link.label}
                                 </li>
-                            </Link>
+                            </a>
                         ))}
                             <div className="flex gap-3 ">
                                 <div className="rounded-full p-[3px] hover:cursor-pointer" onClick={toggleMode}>

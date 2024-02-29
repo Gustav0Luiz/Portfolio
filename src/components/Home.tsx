@@ -58,7 +58,7 @@ const handleMouseOut = () => {
 
                     <div className={`border-[3px] overflow-hidden animate-morph transition-all flex min-h-[350px]
                     ${!modeCtx?.mode ? "border-primaryGray" : "border-primaryBlue"}`}>
-                        <Image alt="image of a programmer" src={"/image-4.jpg"} width={330} height={330}/>
+                        <Image priority={true} alt="image of a programmer" src={"/image-4.jpg"} width={330} height={330}/>
                     </div>
 
                 </div>
