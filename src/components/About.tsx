@@ -3,7 +3,7 @@ import { AboutTextEn, AboutTextPt } from "@/constants";
 import { Lang } from "@/contexts/languageContext";
 import { Mode } from "@/contexts/modeContext";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 
 export const About = () => {
     const langCtx = useContext(Lang);

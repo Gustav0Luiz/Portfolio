@@ -3,7 +3,6 @@ import { NavLinksEn, NavLinksPt } from "@/constants";
 import { Lang } from "@/contexts/languageContext";
 import { Mode } from "@/contexts/modeContext";
 import Image from "next/image";
-import Link from "next/link";
 import { useContext, useState } from "react";
 
 export const Header = () => {
@@ -23,29 +22,29 @@ export const Header = () => {
             <nav className={`flexBetween mx-auto max-w-full font-[Azonix] z-50
             ${!modeCtx?.mode ? "bg-white shadow-headerBlack" : "bg-black shadow-headerWhite"} 
             w-screen padding-container fixed py-6`}>
-                <Link href={"/"}>
+                <a href={"/"}>
                     <h1 className={`text-3xl ${!modeCtx?.mode ? "text-black" : "text-primaryBlue"}`}>Gustavo.Dev</h1>
-                </Link>
+                </a>
                 <div className="flexStart gap-12">
 
                     <ul className="hidden h-full gap-8 lg:flex ">
                     {langCtx!.language && NavLinksPt.map((link)=>(
-                            <Link key={link.key} href={link.href} 
+                            <a key={link.key} href={link.href} 
                             className={`text-md ${!modeCtx?.mode ? "text-primaryGray" : "text-primaryBlue"} flexCenter cursor-pointer  
                             transition-all ${!modeCtx?.mode ? "hover:text-primaryBlue " : "hover:text-white"}`}>
                                 <li>
                                 {link.label}
                                 </li>
-                            </Link>
+                            </a>
                         ))}
                     {!langCtx?.language && NavLinksEn.map((link)=>(
-                            <Link key={link.key} href={link.href} 
+                            <a key={link.key} href={link.href} 
                             className={`text-md ${!modeCtx?.mode? "text-primaryGray" : "text-primaryBlue"} flexCenter cursor-pointer  
                             transition-all ${!modeCtx?.mode ? "hover:text-primaryBlue " : "hover:text-white"}`}>
                                 <li>
                                 {link.label}
                                 </li>
-                            </Link>
+                            </a>
                         ))}
                     </ul>
 
